@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "684408334752",
+    "firebase_url": "https://authapp-73ace.firebaseio.com",
+    "project_id": "authapp-73ace",
+    "storage_bucket": "authapp-73ace.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684408334752:android:4d4b65855d864cfe",
+        "android_client_info": {
+          "package_name": "rahul.com.retrotest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "684408334752-gvklhj6tq4n0q8gb6o825ejv9qb6v9oi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "rahul.com.retrotest",
+            "certificate_hash": "ed6a8019d72e41c9b9298199743b2e998fb65255"
+          }
+        },
+        {
+          "client_id": "684408334752-a8buklpq7ukdg0jdbr7im4ikr2g9rdqp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu8VCN7PYon4SI_CJW7lW4y6152ElFrCY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "684408334752-a8buklpq7ukdg0jdbr7im4ikr2g9rdqp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

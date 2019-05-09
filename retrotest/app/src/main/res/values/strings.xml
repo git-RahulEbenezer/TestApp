@@ -1,0 +1,1311 @@
+<resources>
+    <string name="app_name">retrotest</string>
+    <!--Database-->
+    <string name="db_watifhealthdb">WatIfHealth.db</string>
+    <integer name="db_version">11</integer>
+    <!--Common fields-->
+    <string name="tag_PatientId">PatientId</string>
+    <string name="tag_OrgId">Org_Id</string>
+    <string name="tag_UnitId">Unit_Id</string>
+    <string name="tag_CreatedBy">Created_By</string>
+    <string name="tag_CreatedDate">Created_Date</string>
+    <string name="tag_EditedBy">Edited_By</string>
+    <string name="tag_EditedDate">Edited_Date</string>
+    <string name="tag_Status">Status</string>
+    <string name="tag_id">id</string>
+    <string name="tag_OfflineRecord">Offline_Record</string>
+    <string name="tag_RoleName">RoleName</string>
+    <string name="tag_QUserName">UserName</string>
+    <string name="tag_QuedFrom">QuedFrom</string>
+    <string name="tag_clinicName">ClinicName</string>
+    <string name="tag_lotNumber">LotNumber</string>
+    <string name="tag_expireDate">ExpireDate</string>
+
+
+    <!--Tables  -->
+    <!--patient info table-->
+    <string name="create_table_patient_info">CREATE TABLE IF NOT EXISTS Patients(
+        Id INTEGER primary key autoincrement, Unit_Id INTEGER, Org_Id INTEGER,
+        PatientId TEXT, Sur_Name TEXT, First_Name TEXT,
+        Other_Name TEXT, sex TEXT, Date_of_Birth TEXT,
+        race INTEGER, City TEXT, State TEXT,
+        Contact_Num TEXT, eMail TEXT, Created_By INTEGER, Created_Date TEXT,
+        Pincode TEXT, Country TEXT, Offline_Record INTEGER,Kin_FullName TEXT,
+        Kin_MobileNum TEXT,Kin_Email TEXT,Patient_Image TEXT,
+        groupCard INTEGER,Address TEXT,Marital_Status TEXT,Occupation TEXT,House_Hold_Details TEXT)
+
+
+    </string>
+
+    <string name="table_Patients">Patients</string>
+    <string name="tag_Id">Id</string>
+    <string name="tag_SurName">Sur_Name</string>
+    <string name="tag_FirstName">First_Name</string>
+    <string name="tag_OtherName">Other_Name</string>
+    <string name="tag_sex">sex</string>
+    <string name="tag_DateofBirth">Date_of_Birth</string>
+    <string name="tag_race">race</string>
+    <string name="tag_race_webId">raceId</string>
+    <string name="tag_City">City</string>
+    <string name="tag_State">State</string>
+    <string name="tag_ContactNum">Contact_Num</string>
+    <string name="tag_eMail">eMail</string>
+    <string name="tag_Pincode">Pincode</string>
+    <string name="tag_Country">Country</string>
+    <string name="tag_kinnName">Kin_FullName</string>
+    <string name="tag_kinNumber">Kin_MobileNum</string>
+    <string name="tag_kinEmail">Kin_Email</string>
+    <string name="tag_Image">Patient_Image</string>
+    <string name="tag_groupcard">groupCard</string>
+    <string name="tag_address">Address</string>
+    <string name="tag_maritalStatus">Marital_Status</string>
+    <string name="tag_occupation">Occupation</string>
+    <string name="tag_offlinerec">Offline_Record</string>
+    <string name="tag_household">House_Hold_Details</string>
+
+
+    <!--family history-->
+    <string name="create_table_patient_familyinfo">CREATE TABLE IF NOT EXISTS Patient_Family_InCo(
+        Family_Id INTEGER primary key autoincrement, Unit_Id INTEGER,
+        Org_Id INTEGER, Relation_Id INTEGER, Condition_Id INTEGER,
+        PatientId TEXT, Created_By INTEGER, Created_Date TEXT, Offline_Record INTEGER,Status TEXT)
+    </string>
+    <string name="table_PatientsFamilyInCo">Patient_Family_InCo</string>
+    <string name="tag_FamilyId">Family_Id</string>
+    <string name="tag_RelationId">Relation_Id</string>
+    <string name="tag_ConditionId">Condition_Id</string>
+    <!--Medical info-->
+    <string name="create_table_patient_medicalinfo">CREATE TABLE IF NOT EXISTS Patients_Medical_Info(
+        Medical_Id INTEGER primary key autoincrement, Unit_Id INTEGER,
+        Org_Id INTEGER, PatientId TEXT, Blood_Group INTEGER,
+        Geno_Type INTEGER, Rh_Factor INTEGER,
+        IsPatientHypertensive INTEGER, IsPatientDiabetic INTEGER,
+        IsPatientAdmittedCvd INTEGER, Created_By INTEGER, Created_Date TEXT,
+        History_of_Hypercholesterol INTEGER, Diabetics_in_Pregnancy INTEGER,
+        Poly_Cystic_Ovarian_Disease INTEGER, Offline_Record INTEGER)
+    </string>
+    <string name="table_PatientsMedicalInfo">Patients_Medical_Info</string>
+    <string name="tag_MedicalId">Medical_Id</string>
+    <string name="tag_BloodGroup">Blood_Group</string>
+    <string name="tag_GenoType">Geno_Type</string>
+    <string name="tag_RhFactor">Rh_Factor</string>
+    <string name="tag_IsPatientHypertensive">IsPatientHypertensive</string>
+    <string name="tag_IsPatientDiabetic">IsPatientDiabetic</string>
+    <string name="tag_IsPatientAdmittedCvd">IsPatientAdmittedCvd</string>
+    <string name="tag_HistoryofHypercholesterol">History_of_Hypercholesterol</string>
+    <string name="tag_DiabeticsinPregnancy">Diabetics_in_Pregnancy</string>
+    <string name="tag_PolyCysticOvarianDisease">Poly_Cystic_Ovarian_Disease</string>
+    <!--basic info Not used anymore
+    <string name="create_table_patient_basicinfo">CREATE TABLE IF NOT EXISTS Patient_Basic_Information(
+        Basic_Id INTEGER primary key autoincrement, Unit_Id INTEGER, Org_Id INTEGER,
+        PatientId TEXT, Height REAL, Weight REAL, Waist REAL,
+        Hip REAL, Systolic_Bp REAL, Diastolic_Bp REAL, Physical_Activity INTEGER,
+        Tobbaco INTEGER, Alcohol INTEGER, Pulse_Pressure REAL, Is_Hypertensive INTEGER,
+        Is_Diabetic INTEGER, Created_By INTEGER, Created_Date TEXT,
+        Smoke_Score INTEGER, Alcohol_Score INTEGER, Offline_Record INTEGER,Stat_therapy INTEGER)
+    </string>-->
+
+    <string name="create_table_Patient_Basic_Information">CREATE TABLE IF NOT EXISTS Patient_Basic_Information(
+    Id INTEGER primary key autoincrement, Unit_Id INTEGER, Org_Id INTEGER,
+    Basic_Info_Id TEXT, PatientId TEXT, Height REAL, Weight REAL,
+    Waist REAL, Hip REAL, Systolic_Bp REAL, Diastolic_Bp REAL, Physical_Activity INTEGER,
+    Tobbaco INTEGER,Alcohol INTEGER, Pulse_Pressure REAL, Head_Circumference REAL, R_R REAL,
+    Is_Hypertensive INTEGER, Is_Diabetic INTEGER, HIV_Tested_One_Year INTEGER,
+    On_Treatment_HIV INTEGER, Created_By INTEGER, Created_Date TEXT,
+    Edited_By INTEGER, Edited_Date TEXT, Status INTEGER, Smoke_Score INTEGER,
+    Alcohol_Score INTEGER, Offline_Record INTEGER,Stat_therapy INTEGER,Pulse REAL,
+    Temprature REAL,MUAC REAL,Oxygen_Concentration REAL)</string>
+
+    <string name="table_PatientsBasicInformation">Patient_Basic_Information</string>
+    <string name="tag_BasicId">Basic_Id</string>
+    <string name="tag_Height">Height</string>
+    <string name="tag_Weight">Weight</string>
+    <string name="tag_Waist">Waist</string>
+    <string name="tag_Hip">Hip</string>
+    <string name="tag_SystolicBp">Systolic_Bp</string>
+    <string name="tag_DiastolicBp">Diastolic_Bp</string>
+    <string name="tag_PhysicalActivity">Physical_Activity</string>
+    <string name="tag_Tobbaco">Tobbaco</string>
+    <string name="tag_Alcohol">Alcohol</string>
+    <string name="tag_PulsePressure">Pulse_Pressure</string>
+    <string name="tag_IsHypertensive">Is_Hypertensive</string>
+    <string name="tag_IsDiabetic">Is_Diabetic</string>
+    <string name="tag_OnTreatmentHiv">On_Treatment_HIV</string>
+    <string name="tag_IsStatin">Stat_therapy</string>
+    <string name="tag_HeadCircumference">Head_Circumference</string>
+    <string name="tag_Muac">MUAC</string>
+    <string name="tag_Prescription_Note">Prescription_Note</string>
+
+    <string name="tag_Pulse">Pulse</string>
+    <string name="tag_Temparature">Temprature</string>
+    <string name="tag_Pulsepressurevital">Pulsepressurevital</string>
+
+    <string name="tag_OxygenConcentration">Oxygen_Concentration</string>
+    <string name="tag_RR">R_R</string>
+
+    <!--symptoms-->
+    <string name="create_table_patient_symptoms">CREATE TABLE IF NOT EXISTS Patient_Symptoms(
+        Patient_Symptom_Id INTEGER primary key autoincrement, Unit_Id INTEGER, Org_Id INTEGER,
+        PatientId TEXT, Symptom_id INTEGER, Parent_Symptom INTEGER,
+        Main_Symptom INTEGER, No_Days INTEGER, No_Month INTEGER,
+        Created_By INTEGER, Created_Date TEXT, Offline_Record INTEGER)
+    </string>
+    <string name="table_PatientSymptoms">Patient_Symptoms</string>
+    <string name="tag_PatientSymptomId">Patient_Symptom_Id</string>
+    <string name="tag_Symptomid">Symptom_id</string>
+    <string name="tag_ParentSymptom">Parent_Symptom</string>
+    <string name="tag_MainSymptom">Main_Symptom</string>
+    <string name="tag_NoDays">No_Days</string>
+    <string name="tag_NoMonth">No_Month</string>
+    <string name="tag_parentsymptomcode">Parent_Symptom_Code</string>
+    <!--vitals-->
+    <!--<string name="create_table_patient_vitals">CREATE TABLE IF NOT EXISTS Patient_Vitals(
+        Vitals_Id INTEGER primary key autoincrement, Unit_Id INTEGER, Org_Id INTEGER,
+        PatientId TEXT, Fasting_Glucose REAL, Random_Glucose REAL,
+        Triglycerides REAL, HBA1C REAL, Plasma_GTT REAL,
+        Creatinine REAL, Hdlc REAL, Ldlc REAL,
+        Total_Cholestrol REAL, Albumin_Creatinine_Ratio REAL,
+        Homocestein REAL, Serum_Calcium REAL, hsCRP REAL,
+        Serum_Magnesium REAL, Uric_Acid REAL, Protein INTEGER,
+        Created_By INTEGER, Created_Date TEXT, Specic_Gravity REAL, Glucose INTEGER,
+        RBC INTEGER, Leucocytes INTEGER, Ketones INTEGER, Bilirubin INTEGER,
+        Nitrites INTEGER, PH REAL, Urobilinogen INTEGER, Urine_Hemoglobin INTEGER)
+    </string>-->
+    <string name="create_table_Patient_Vitals">CREATE TABLE IF NOT EXISTS Patient_Vitals(
+	    Patient_Vitals_Id INTEGER primary key autoincrement,
+	    Lab_Unique_Id TEXT, Unit_Id INTEGER, Org_Id INTEGER,
+	    PatientId TEXT, IsPartial_Updated TEXT, Smoke_Score INTEGER,
+	    Alcohol_Score INTEGER, Fasting_Glucose REAL, Random_Glucose REAL,
+	    Triglycerides REAL, HBA1C REAL, Plasma_GTT REAL,
+	    Creatinine REAL, Hdlc REAL, Ldlc REAL, Total_Cholestrol REAL, Heamoglobin REAL,
+	    CD4_Count REAL, CD4_Percent REAL, Albumin REAL, PCR INTEGER,
+	    Urine_Albumin REAL, Urine_Creainine REAL, dLDLc REAL,
+	    Albumin_Creatinine_Ratio REAL, Homocestein REAL, SdLdlc REAL,
+	    Serum_Calcium REAL, hsCRP REAL, Serum_Magnesium REAL,
+	    Plasma_Adiponectin REAL, Uric_Acid REAL, Cystatin REAL,
+	    Non_Hdlc REAL, First_HIVTest INTEGER, Second_HIVTest INTEGER,
+	    Viral_Load REAL, ALT REAL, AST REAL, WCC REAL, Neutrophils REAL,
+	    Lymphocytes REAL, Myocytes REAL, Basophils REAL, Eosinophils REAL,
+	    Platelets REAL, TB_Sputum INTEGER, TB_Gxp INTEGER, STT_Mantoux INTEGER,
+	    TB_Culture INTEGER, Clinical_Diagnosed_TB INTEGER, Elisa INTEGER, RPR INTEGER,
+	    Specic_Gravity REAL, Protein INTEGER, Glucose INTEGER,
+	    RBC INTEGER, Leucocytes INTEGER, Ketones INTEGER, Bilirubin INTEGER,
+	    Nitrites INTEGER, PH REAL, Urobilinogen INTEGER, Urine_Hemoglobin INTEGER,
+	    Created_By INTEGER, Created_Date TEXT, Edited_By INTEGER, Edited_Date TEXT,
+	    Status INTEGER, Treatment_Started_date TEXT, Type_Of_Test INTEGER,
+        Other_Information TEXT, PAP_Smear INTEGER, Offline_Record INTEGER,FTA INTEGER,RH_Antibodies INTEGER,
+        PCR_10_weeks INTEGER,PCR_18_weeks INTEGER,TB_Sputum_7_weeks INTEGER,TB_Sputum_11_weeks INTEGER,
+        CD4_Annual REAL, six_month_Post_initiation_Viral_Load REAL, Re_initiation_baseline_Viral_load REAL,
+        TB_Sputum_23_weeks INTEGER,First_Hiv_Test_Date TEXT,Confirmatory_Test_Date TEXT,hiv_screening TEXT,
+        Previous_HIV_result TEXT,Previous_HIV_Date TEXT)
+    </string>
+    <!--<string name="tag_VitalsId">Vitals_Id</string>-->
+    <string name="table_PatientsVitals">Patient_Vitals</string>
+    <string name="tag_PatientVitalsId">Patient_Vitals_Id</string>
+    <string name="tag_LabUniqueId">Lab_Unique_Id</string>
+    <string name="tag_IsPartialUpdated">IsPartial_Updated</string>
+    <string name="tag_SmokeScore">Smoke_Score</string>
+    <string name="tag_AlcoholScore">Alcohol_Score</string>
+    <string name="tag_FastingGlucose">Fasting_Glucose</string>
+    <string name="tag_RandomGlucose">Random_Glucose</string>
+    <string name="tag_Triglycerides">Triglycerides</string>
+    <string name="tag_HBA1C">HBA1C</string>
+    <string name="tag_PlasmaGTT">Plasma_GTT</string>
+    <string name="tag_Creatinine">Creatinine</string>
+    <string name="tag_Hdlc">Hdlc</string>
+    <string name="tag_Ldlc">Ldlc</string>
+    <string name="tag_TotalCholestrol">Total_Cholestrol</string>
+    <string name="tag_Heamoglobin">Heamoglobin</string>
+    <string name="tag_CD4Count">CD4_Count</string>
+    <string name="tag_CD4Percent">CD4_Percent</string>
+    <string name="tag_Albumin">Albumin</string>
+    <string name="tag_PCR">PCR</string>
+    <string name="tag_UrineAlbumin">Urine_Albumin</string>
+    <string name="tag_UrineCreainine">Urine_Creainine</string>
+    <string name="tag_dLDLc">dLDLc</string>
+    <string name="tag_AlbuminCreatinineRatio">Albumin_Creatinine_Ratio</string>
+    <string name="tag_Homocestein">Homocestein</string>
+    <string name="tag_SdLdlc">SdLdlc</string>
+    <string name="tag_SerumCalcium">Serum_Calcium</string>
+    <string name="tag_hsCRP">hsCRP</string>
+    <string name="tag_SerumMagnesium">Serum_Magnesium</string>
+    <string name="tag_PlasmaAdiponectin">Plasma_Adiponectin</string>
+    <string name="tag_UricAcid">Uric_Acid</string>
+    <string name="tag_Cystatin">Cystatin</string>
+    <string name="tag_NonHdlc">Non_Hdlc</string>
+    <string name="tag_FirstHIVTest">First_HIVTest</string>
+    <string name="tag_SecondHIVTest">Second_HIVTest</string>
+    <string name="tag_ViralLoad">Viral_Load</string>
+    <string name="tag_ALT">ALT</string>
+    <string name="tag_AST">AST</string>
+    <string name="tag_WCC">WCC</string>
+    <string name="tag_Neutrophils">Neutrophils</string>
+    <string name="tag_Lymphocytes">Lymphocytes</string>
+    <string name="tag_Myocytes">Myocytes</string>
+    <string name="tag_Basophils">Basophils</string>
+    <string name="tag_Eosinophils">Eosinophils</string>
+    <string name="tag_Platelets">Platelets</string>
+    <string name="tag_TBSputum">TB_Sputum</string>
+    <string name="tag_TBGxp">TB_Gxp</string>
+    <string name="tag_STTMantoux">STT_Mantoux</string>
+    <string name="tag_TBCulture">TB_Culture</string>
+    <string name="tag_ClinicalDiagnosedTB">Clinical_Diagnosed_TB</string>
+    <string name="tag_Elisa">Elisa</string>
+    <string name="tag_RPR">RPR</string>
+    <string name="tag_SpecicGravity">Specic_Gravity</string>
+    <string name="tag_Protein">Protein</string>
+    <string name="tag_Glucose">Glucose</string>
+    <string name="tag_RBC">RBC</string>
+    <string name="tag_Leucocytes">Leucocytes</string>
+    <string name="tag_Ketones">Ketones</string>
+    <string name="tag_Bilirubin">Bilirubin</string>
+    <string name="tag_Nitrites">Nitrites</string>
+    <string name="tag_PH">PH</string>
+    <string name="tag_Urobilinogen">Urobilinogen</string>
+    <string name="tag_UrineHemoglobin">Urine_Hemoglobin</string>
+    <string name="tag_TreatmentStarted_date">Treatment_Started_date</string>
+    <string name="tag_TypeOfTest">Type_Of_Test</string>
+    <string name="tag_OtherInformation">Other_Information</string>
+    <string name="tag_PAPSmear">PAP_Smear</string>
+    <string name="tag_FTA">FTA</string>
+    <string name="tag_RH_Antibodies">RH_Antibodies</string>
+
+    <string name="tag_PCR10weeks">PCR_10_weeks</string>
+    <string name="tag_PCR18weeks">PCR_18_weeks</string>
+    <string name="tag_TBSputum7weeks">TB_Sputum_7_weeks</string>
+    <string name="tag_TBSputum11weeks">TB_Sputum_11_weeks</string>
+    <string name="tag_CD4Annual">CD4_Annual</string>
+    <string name="tag_ViralLoad6month">six_month_Post_initiation_Viral_Load</string>
+    <string name="tag_ViralLoadbaseLine">Re_initiation_baseline_Viral_load</string>
+    <string name="tag_TBSputum23weeks">TB_Sputum_23_weeks</string>
+    <string name="tag_First_Hiv_Test_Date">First_Hiv_Test_Date</string>
+    <string name="tag_Confirmatory_Test_Date">Confirmatory_Test_Date</string>
+    <string name="tag_Hiv_Screening">hiv_screening</string>
+    <string name="tag_Previous_HIV_result">Previous_HIV_result</string>
+    <string name="tag_Previous_HIV_Date">Previous_HIV_Date</string>
+
+    <!--pregnancy-->
+    <string name="create_table_patient_pregnancy">CREATE TABLE IF NOT EXISTS Patient_Pregnancy_Details(
+        Pregnancy_Id INTEGER primary key autoincrement, Unit_Id INTEGER, Org_Id INTEGER,
+        PatientId TEXT, Is_Pregnant INTEGER, Is_Planning_Conceive INTEGER,
+        Is_Feeding INTEGER, Pregnancy_Test INTEGER, Pregnancy_Started_Date TEXT,
+        Previous_Pregnancy INTEGER, Abortion INTEGER, Live_Deliveries INTEGER,
+        Telanus_Toxid_Vaccine_Previous_Pregnancy INTEGER,
+        Middle_Upper_Arm_Circumference_CM INTEGER,
+        Symphysis_Fundal_Height INTEGER, Palpilation INTEGER,
+        Ultra_Sound INTEGER, Ultra_Sound_Expected_Date_Of_Delivery TEXT,
+        Still_Birth INTEGER, Attitude INTEGER, Presentation INTEGER,
+        Fetal_Heart_Rate INTEGER, Lie INTEGER, Liquer INTEGER,
+        Engagement INTEGER, Pedal_Edema INTEGER, No_Of_Babies INTEGER,
+        Created_By INTEGER, Created_Date TEXT, Offline_Record INTEGER, Normal_Menstrual1 INTEGER,Pregnancy_Result INTEGER,
+        Delivery_Last_Date TEXT,Cycle INTEGER,Select_Operation INTEGER,summary TEXT,
+        Pregnancy_Completion_Weeks INTEGER,Is_Contraceptive INTEGER,No_of_Pregnancy INTEGER)
+    </string>
+
+    <string name="table_PatientsPregnancyDetails">Patient_Pregnancy_Details</string>
+    <string name="tag_PregnancyId">Pregnancy_Id</string>
+    <string name="tag_IsPregnant">Is_Pregnant</string>
+    <string name="tag_IsPlanningConceive">Is_Planning_Conceive</string>
+    <string name="tag_IsFeeding">Is_Feeding</string>
+    <string name="tag_PregnancyTest">Pregnancy_Test</string>
+    <string name="tag_PregnancyStartedDate">Pregnancy_Started_Date</string>
+    <string name="tag_PreviousPregnancy">Previous_Pregnancy</string>
+    <string name="tag_Abortion">Abortion</string>
+    <string name="tag_LiveDeliveries">Live_Deliveries</string>
+    <string name="tag_TelanusToxidVaccinePreviousPregnancy">Telanus_Toxid_Vaccine_Previous_Pregnancy</string>
+    <string name="tag_MiddleUpperArmCircumferenceCM">Middle_Upper_Arm_Circumference_CM</string>
+    <string name="tag_SymphysisFundalHeight">Symphysis_Fundal_Height</string>
+    <string name="tag_Palpilation">Palpilation</string>
+    <string name="tag_UltraSound">Ultra_Sound</string>
+    <string name="tag_UltraSoundExpectedDateOfDelivery">Ultra_Sound_Expected_Date_Of_Delivery</string>
+    <string name="tag_StillBirth">Still_Birth</string>
+    <string name="tag_Attitude">Attitude</string>
+    <string name="tag_Presentation">Presentation</string>
+    <string name="tag_FetalHeartRate">Fetal_Heart_Rate</string>
+    <string name="tag_Lie">Lie</string>
+    <string name="tag_Liquer">Liquer</string>
+    <string name="tag_Engagement">Engagement</string>
+    <string name="tag_PedalEdema">Pedal_Edema</string>
+    <string name="tag_NoOfBabies">No_Of_Babies</string>
+    <string name="tag_NotSure">Normal_Menstrual1</string>
+    <string name="tag_PrgResult">Pregnancy_Result</string>
+    <string name="tag_deliverylastdate">Delivery_Last_Date</string>
+    <string name="tag_cycle">Cycle</string>
+    <string name="tag_SelectOperation">Select_Operation</string>
+    <string name="tag_Summary">summary</string>
+    <string name="tag_PrgCompWeek">Pregnancy_Completion_Weeks</string>
+    <string name="tag_IsContraceptive">Is_Contraceptive</string>
+    <string name="tag_NoPrg">No_of_Pregnancy</string>
+    <!--Immunization-->
+    <!--common on both table-->
+    <string name="tag_DoseName">Dose_Name</string>
+    <string name="tag_DoseDate">Dose_Date</string>
+    <!--child-->
+    <string name="create_table_childimmunization">CREATE TABLE IF NOT EXISTS Patient_Child_Immunization (
+        Child_Immunization_Id INTEGER primary key autoincrement, Unit_Id INTEGER, Org_Id INTEGER,
+        PatientId TEXT, Child_Immunization_List_Id INTEGER,
+        Child_Immunization_Dose_Id INTEGER,
+        Dose_Name TEXT, Dose_Date TEXT, Created_By INTEGER,
+        Created_Date TEXT, Offline_Record INTEGER, ClinicName TEXT, LotNumber TEXT, ExpireDate Text, UserName TEXT)
+    </string>
+
+    <string name="create_table_childImmunizationClinicDeatails">CREATE TABLE IF NOT EXISTS Patient_Child_Immunization_Clinic_Details (
+        Child_Immunization_Id INTEGER primary key autoincrement, Unit_Id INTEGER, Org_Id INTEGER,
+        PatientId TEXT, Child_Immunization_List_Id INTEGER,
+        Child_Immunization_Dose_Id INTEGER,
+        Dose_Name TEXT, Dose_Date TEXT, Created_By INTEGER,
+        Created_Date TEXT, Clinic_Name TEXT, LOT_Number TEXT, Expiry_Date Text, Practitioner_Name TEXT, Age TEXT)
+    </string>
+
+    <string name="table_PatientChildImmunization">Patient_Child_Immunization</string>
+    <string name="table_PatientChildImmunizationClinicDetails">Patient_Child_Immunization_Clinic_Details</string>
+    <string name="tag_ChildImmunizationId">Child_Immunization_Id</string>
+    <string name="tag_ChildImmunizationDoseId">Child_Immunization_Dose_Id</string>
+    <string name="tag_ChildImmunizationListId">Child_Immunization_List_Id</string>
+    <string name="tag_ChildImmunizationSublistId">Child_Immunization_Sublist_Id</string>
+    <!--adult-->
+    <string name="create_table_adultimmunization">CREATE TABLE IF NOT EXISTS Patient_Adult_Immunization (
+        Adult_Immunization_Id INTEGER primary key autoincrement, Unit_Id INTEGER, Org_Id INTEGER,
+        PatientId TEXT, Adult_Immunization_List_Id INTEGER,
+        Dose_Name TEXT, Dose_Date TEXT, Created_By INTEGER,
+        Created_Date TEXT, Offline_Record INTEGER)
+    </string>
+    <string name="table_PatientAdultImmunization">Patient_Adult_Immunization</string>
+    <string name="tag_AdultImmunizationId">Adult_Immunization_Id</string>
+    <string name="tag_AdultImmunizationListId">Adult_Immunization_List_Id</string>
+    <!--Assessment header-->
+    <string name="create_table_PatientAssessmentHeader">CREATE TABLE IF NOT EXISTS Patient_Assessment_Header(
+	    Patient_Assessment_Header_Id INTEGER primary key autoincrement,
+	    Unit_Id INTEGER, Org_Id INTEGER, PatientId TEXT, Cardiovascular_Assessment TEXT,
+        Homeostasis_Status TEXT, Created_By TEXT, Created_Date TEXT,
+	    CKDRiskFactor TEXT, Hypertension_Grade TEXT, Hypertension_in_3_years TEXT,
+	    Hypertension_in_6_years TEXT, Hypertension_in_9_years TEXT, Diabetes_in_8_years TEXT,
+	    Diabetic_Grade TEXT, Risk_Of_Progressive_Renal TEXT, Dyslipidemia TEXT,
+	    Risk_of_Coronary_Artery_Disease TEXT, Risk_of_Cardiovascular_Accident TEXT,
+	    Obesity_Class TEXT, Risk_Of_CVA TEXT, Diabetic_Number INTEGER, Hypertension_Number INTEGER,
+        Hypertension_Level TEXT, Dyslipidemia_Number INTEGER,Presenting_Symptoms TEXT, OtherPresentingSymptomsDetails TEXT,
+        Physical_Observation TEXT, OtherGeneralPhysicalObservationDetails TEXT, OtherTreatmentPlan TEXT, Other_Provisional_Diagnosis TEXT,
+        Other_information TEXT, Offline_Record INTEGER)</string>
+
+    <string name="table_PatientAssessmentHeader">Patient_Assessment_Header</string>
+    <string name="tag_PatientAssessmentHeaderId">Patient_Assessment_Header_Id</string>
+    <string name="tag_CardiovascularAssessment">Cardiovascular_Assessment</string>
+    <string name="tag_HomeostasisStatus">Homeostasis_Status</string>
+    <string name="tag_CKDRiskFactor">CKDRiskFactor</string>
+    <string name="tag_HypertensionGrade">Hypertension_Grade</string>
+    <string name="tag_Hypertensionin3years">Hypertension_in_3_years</string>
+    <string name="tag_Hypertensionin6years">Hypertension_in_6_years</string>
+    <string name="tag_Hypertensionin9years">Hypertension_in_9_years</string>
+    <string name="tag_Diabetesin8years">Diabetes_in_8_years</string>
+    <string name="tag_DiabeticGrade">Diabetic_Grade</string>
+    <string name="tag_RiskOfProgressiveRenal">Risk_Of_Progressive_Renal</string>
+    <string name="tag_Dyslipidemia">Dyslipidemia</string>
+    <string name="tag_RiskofCoronaryArteryDisease">Risk_of_Coronary_Artery_Disease</string>
+    <string name="tag_RiskofCardiovascularAccident">Risk_of_Cardiovascular_Accident</string>
+    <string name="tag_ObesityClass">Obesity_Class</string>
+    <string name="tag_RiskOfCVA">Risk_Of_CVA</string>
+    <string name="tag_DiabeticNumber">Diabetic_Number</string>
+    <string name="tag_HypertensionNumber">Hypertension_Number</string>
+    <string name="tag_HypertensionLevel">Hypertension_Level</string>
+    <string name="tag_DyslipidemiaNumber">Dyslipidemia_Number</string>
+    <string name="tag_OtherPresentingSymptomsDetails">OtherPresentingSymptomsDetails</string>
+    <string name="tag_Presenting_Symptoms">Presenting_Symptoms</string>
+    <string name="tag_OtherGeneralPhysicalObservationDetails">OtherGeneralPhysicalObservationDetails</string>
+    <string name="tag_Physical_Observation">Physical_Observation</string>
+    <string name="tag_OtherTreatmentPlan">OtherTreatmentPlan</string>
+    <string name="tag_Other_information">Other_information</string>
+    <string name="tag_OtherProvisionalDiagnosis">Other_Provisional_Diagnosis</string>
+    <string name="tag_Otherinformation">Other_information</string>
+
+    <!--Treatment header-->
+    <string name="create_table_PatientTreatmentHeaderTable">CREATE TABLE IF NOT EXISTS Patient_Treatment_Header(
+	    Patient_Treatment_Header_Id INTEGER primary key autoincrement,Org_Id TEXT,
+	    Unit_Id TEXT, PatientId TEXT, Created_By TEXT, Created_Date TEXT,
+        PrescriptionData TEXT, Admin_Mode TEXT, Frequency_Id TEXT, Total_Invoice_Amount TEXT, ReasonId TEXT,
+        PatientVisit TEXT, OtherPrescription TEXT) </string>
+
+    <string name="table_PatientTreatmentHeaderTable">Patient_Treatment_Header</string>
+    <string name="tag_PrescriptionData">PrescriptionData</string>
+    <string name="tag_ReasonId">ReasonId</string>
+    <string name="tag_PatientVisit">PatientVisit</string>
+    <string name="tag_OtherPrescription">OtherPrescription</string>
+
+
+    <!--Treatment Prescription-->
+    <string name="create_table_PatientTreatmentPrescriptions">CREATE TABLE IF NOT EXISTS Patient_Treatment_Prescriptions(
+        Patient_Treatment_Prescription_id INTEGER primary key autoincrement,
+	    Org_Id INTEGER, Unit_Id INTEGER, PatientId TEXT, Treatment_Id INTEGER,
+        Drug_Group_Id INTEGER, Drug_id INTEGER, Strength TEXT,
+	    Quantity TEXT, Frequency TEXT, Admin_Mode TEXT,
+	    End_Date TEXT, Created_By TEXT, Created_Date TEXT, Offline_Record INTEGER)
+    </string>
+
+    <string name="table_PatientTreatmentPrescriptions">Patient_Treatment_Prescriptions</string>
+    <string name="tag_PatientTreatmentPrescriptionid">Patient_Treatment_Prescription_id</string>
+    <string name="tag_TreatmentId">Treatment_Id</string>
+    <string name="tag_DrugGroupId">Drug_Group_Id</string>
+    <string name="tag_Drugid">Drug_id</string>
+    <string name="tag_DrugId">Drug_Id</string>
+    <string name="tag_Strength">Strength</string>
+    <string name="tag_Quantity">Quantity</string>
+    <string name="tag_Frequency">Frequency</string>
+    <string name="tag_AdminMode">Admin_Mode</string>
+    <string name="tag_EndDate">End_Date</string>
+    <string name="tag_AddedName">AddedName</string>
+    <string name="tag_DurgCode">Durg_Code</string>
+    <string name="tag_TypeCode">Type_Code</string>
+    <string name="tag_Mode">Mode</string>
+    <string name="tag_Genricname">Genric_name</string>
+    <string name="tag_Ethicalname">Ethical_name</string>
+    <string name="tag_DrugTypeId">Drug_Type_Id</string>
+    <string name="tag_DosageForm">Dosage_Form</string>
+    <string name="tag_PrescribedDoctor">Prescribed_Doctor</string>
+
+    <string name="tag_SymptomsId">Symptoms_Id</string>
+    <string name="tag_SymptompsCode">Symptomps_Code</string>
+    <string name="tag_SympptomDescriptionid">Sympptom_Description_id</string>
+    <string name="tag_DescriptionCode">Description_Code</string>
+    <string name="tag_Locationid">Location_id</string>
+    <string name="tag_LocationCode">Location_Code</string>
+    <string name="tag_symptomId">symptomId</string>
+
+    <string name="tag_RelievedByid">Relieved_By_id</string>
+    <string name="tag_RelievedCode">Relieved_Code</string>Option_Code
+    <string name="tag_OptionCode">Option_Code</string>
+    <string name="tag_Category">Category</string>
+    <string name="tag_TestName">Test_Name</string>
+    <string name="tag_LabCacheId">Lab_Cache_Id</string>
+    <string name="tag_LaboratoryProcedure">Laboratory_Procedure</string>
+
+
+    <!--Patient Provisional Diagnosis-->
+    <string name="create_table_PatientProvisionalDiagnosis">CREATE TABLE IF NOT EXISTS Patient_Provisional_Diagnosis(
+	Patient_Provisional_DiagnosisId INTEGER primary key autoincrement,
+	Org_Id INTEGER, Unit_Id INTEGER, PatientId TEXT,
+	Provisional_Diagnosis TEXT, Assessment_Id INTEGER,
+	Created_By INTEGER, Created_Date TEXT, Offline_Record INTEGER)
+    </string>
+    <string name="table_PatientProvisionalDiagnosis">Patient_Provisional_Diagnosis</string>
+    <string name="tag_Patient_Provisional_DiagnosisId">Patient_Provisional_DiagnosisId</string>
+    <string name="tag_ProvisionalDiagnosis">Provisional_Diagnosis</string>
+    <string name="tag_AssessmentId">Assessment_Id</string>
+    <string name="tag_TreatmentPrescriptionId">Patient_Treatment_Prescription_id</string>
+
+    <!--Treatment header-->
+    <string name="create_table_PatientTreatmentHeader">CREATE TABLE IF NOT EXISTS Patient_Treatment_Header(
+	Patient_Treatment_Header_Id INTEGER primary key autoincrement,
+	Org_Id INTEGER, Unit_Id INTEGER, PatientId TEXT,
+	Treatment_Id INTEGER, days_Of_Treatment INTEGER,
+	Treatment_Description TEXT, Months_For_Treatment INTEGER,
+	Treatment_Started_Date TEXT, is_Old_Treatment TEXT,
+	Disease_Master_Id INTEGER, Sub_Disease_Id INTEGER,
+	Created_By INTEGER, Created_Date TEXT, Edited_By INTEGER,
+	Edited_Date TEXT, Status INTEGER, Assessment_Id INTEGER, Offline_Record INTEGER)</string>
+
+    <string name="table_PatientTreatmentHeader">Patient_Treatment_Header</string>
+    <string name="tag_PatientTreatmentHeaderId">Patient_Treatment_Header_Id</string>
+    <string name="tag_daysOfTreatment">days_Of_Treatment</string>
+    <string name="tag_TreatmentDescription">Treatment_Description</string>
+    <string name="tag_MonthsForTreatment">Months_For_Treatment</string>
+    <string name="tag_TreatmentStartedDate">Treatment_Started_Date</string>
+    <string name="tag_isOldTreatment">is_Old_Treatment</string>
+    <string name="tag_DiseaseMasterId">Disease_Master_Id</string>
+    <string name="tag_SubDiseaseId">Sub_Disease_Id</string>
+
+    <string name="create_table_PatientQueue">CREATE TABLE IF NOT EXISTS PatientsQueue(
+        Id INTEGER primary key autoincrement,Org_Id INTEGER,Unit_Id INTEGER,
+        PatientId TEXT, User_id TEXT, From_User_Type TEXT,
+        To_User_Type TEXT,To_User_id TEXT, Created_By INTEGER,Created_Date TEXT, Offline_Record INTEGER)
+    </string>
+    <string name="table_PatientsQueue">PatientsQueue</string>
+    <string name="tag_Userid">User_id</string>
+    <string name="tag_FromUserType">From_User_Type</string>
+    <string name="tag_ToUserType">To_User_Type</string>
+    <string name="tag_ToUserId">To_User_id</string>
+
+    <!--Medical Images-->
+    <string-array name="web_image_category_array">
+        <item>Laboratory Test</item>
+        <item>X-Ray</item>
+        <item>MRI and CardiacMRI</item>
+        <item>CT Scan</item>
+        <item>PET/CT Scan</item>
+        <item>Ultrasound</item>
+        <item>ECG Images</item>
+        <item>Bone Densinometry</item>
+        <item>Ophthalmology</item>
+        <item>Dermatology</item>
+        <item>Dental X-rays</item>
+        <item>Diabetic foot</item>
+        <item>Medical Reports</item>
+        <item>EEG</item>
+        <item>Dorsalis pedis Artery</item>
+        <item>Anterior Tibial Artery</item>
+        <item>Posterior Tibial Artery</item>
+        <item>Fibular Artery</item>
+        <item>Popliteal Artery</item>
+        <item>Femoral Artery</item>
+        <item>Radiology</item>
+        <item>Computerized Tomograpy</item>
+        <item>Angiograpy</item>
+        <item>Combined modalities in one image</item>
+        <item>Visible light Photograpy</item>
+        <item>Endoscopy</item>
+        <item>Other Organs</item>
+        <item>Printed  signals,waves</item>
+        <item>Electromyograpy</item>
+        <item>Microscopy</item>
+        <item>Light Microscopy</item>
+        <item>Electron Microscopy</item>
+        <item>Transmission Microscopy</item>
+        <item>3D reconstructions</item>
+        <item>Doctor Report</item>
+        <item>Blood Test Result</item>
+        <item>Other Report</item>
+        <item>ECG Trace</item>
+        <item>Consent form</item>
+        <item>Medical Report</item>
+        <item>Immunization Card</item>
+        <item>Patient ID</item>
+
+    </string-array>
+
+
+    <!--Medical Images-->
+    <string-array name="web_image_category_array_Id">
+        <item>42</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+    </string-array>
+
+    <!--Patient Order Laboratory Tests-->
+    <string name="create_table_OrderLabTests">CREATE TABLE IF NOT EXISTS Patient_Order_LabTests (
+        Order_LabTests_Id INTEGER primary key autoincrement, Unit_Id INTEGER, Org_Id INTEGER,
+        PatientId TEXT, AddedName TEXT, Category TEXT, Test_Name TEXT,
+        Created_Date TEXT, Created_By INTEGER, Offline_Record INTEGER,Lab_Cache_Id INTEGER)
+    </string>
+
+    <string name="table_OrderLabTests">Patient_Order_LabTests</string>
+    <string name="tag_OrderLabTestsId">Order_LabTests_Id</string>
+    <string name="tag_DrugMode">Drug_Mode</string>
+
+    <!--Patient Questioner Table-->
+    <string name="create_table_Patient_Questionnaires">CREATE TABLE IF NOT EXISTS Patient_Questionnaires(
+	    Questionnaire_Id INTEGER,
+	    Org_Id INTEGER,
+	    Unit_Id INTEGER,
+	    Patient_Question_Id TEXT,
+	    PatientId TEXT,
+	    Psychiatric_Illness INTEGER,
+	    Nevirapine_Toxicity INTEGER,
+	    Shift_Worker INTEGER,
+	    D4T_Toxicity INTEGER,
+	    TB_Treatment INTEGER,
+	    Neuritis INTEGER,
+	    Aminoglycosides INTEGER,
+	    Intollerent_Of_EFV INTEGER,
+	    On_D4T INTEGER,
+	    On_Pi INTEGER,
+	    On_NNRIT INTEGER,
+	    On_ABC INTEGER,
+	    Exposed_VNP INTEGER,
+	    Is_Pheripherial_Nutrics INTEGER,
+	    jaundice INTEGER,
+	    Alleregic_Skin_Rash INTEGER,
+	    LPV_Diairrhoea INTEGER,
+	    Lipodysprophy INTEGER,
+	    TB_Close_Contect INTEGER,
+	    TB_Index_Patient INTEGER,
+	    TB_Diabetic INTEGER,
+	    HIV_Status INTEGER,
+	    TB_investigation INTEGER,
+	    TB_Facility_Name TEXT,
+	    Is_Metformin INTEGER,
+	    Created_By INTEGER,
+	    Created_Date TEXT,
+	    Edited_By INTEGER,
+	    Edited_Date TEXT,
+	    Status INTEGER,
+	    Nicotine_Waking_First_Cigarette INTEGER,
+	    Nicotine_Difficult_To_Refrain INTEGER,
+	    Nicotine_Give_Up INTEGER,
+	    Nicotine_How_Many_Cigarettes INTEGER,
+	    Nicotine_More_Frequently_Morning INTEGER,
+	    Nicotine_Smoke_Even_Sick INTEGER,
+	    Alcohol_How_Often_Drink INTEGER,
+	    Alcohol_How_Many_Units INTEGER,
+	    Alcohol_How_Often_F6_M8 INTEGER,
+	    TB_Treatmentand_Status INTEGER,
+	    TB_Treatment_History INTEGER,
+	    Smear_Culture_PositivePTB INTEGER,
+	    EPTB_SmearCulture_NegativePTB INTEGER,
+        Is_the_child_exclusively_breast_fed,
+        Has_the_child_had_vitamin_A_dose,
+        Has_the_child_had_a_deworming_dose,
+        Child_under_2_years_underweight,
+        Diarrhoea_and_dehydratrion_child_under_5_years,
+        Pneumonia_child_under_5_years,
+        Child_with_severe_malnutrition_under_5_years,
+        Child_under_5_years_on_food_suplimentation,
+        Child_under_2_Is_the_child_breast_Fed_or_given_Suppliment,
+        Child_Under_5_Is_anyone_in_the_family_on_treatment_for_TB,
+        Child_Under_5_Is_there_anyone_in_the_family_who_is_coughing_for_more_than_2_weeks,
+        Is_child_immunization_up_to_date,
+        child_under_1_is_mother_on_ART,
+        has_the_child_had_a_recent_PCR_test_done,
+        Offline_Record INTEGER
+        )</string>
+
+    <string name="table_PatientQuestionnaires">Patient_Questionnaires</string>
+    <string name="tag_QuestionnaireId">Questionnaire_Id</string>
+    <string name="tag_PatientQuestionId">Patient_Question_Id</string>
+    <string name="tag_PsychiatricIllness">Psychiatric_Illness</string>
+    <string name="tag_NevirapineToxicity">Nevirapine_Toxicity</string>
+    <string name="tag_ShiftWorker">Shift_Worker</string>
+    <string name="tag_D4TToxicity">D4T_Toxicity</string>
+    <string name="tag_TBTreatment">TB_Treatment</string>
+    <string name="tag_Neuritis">Neuritis</string>
+    <string name="tag_Aminoglycosides">Aminoglycosides</string>
+    <string name="tag_Intollerent_Of_EFV">Intollerent_Of_EFV</string>
+    <string name="tag_OnD4T">On_D4T</string>
+    <string name="tag_OnPi">On_Pi</string>
+    <string name="tag_OnNNRIT">On_NNRIT</string>
+    <string name="tag_OnABC">On_ABC</string>
+    <string name="tag_ExposedVNP">Exposed_VNP</string>
+    <string name="tag_IsPheripherialNutrics">Is_Pheripherial_Nutrics</string>
+    <string name="tag_jaundice">jaundice</string>
+    <string name="tag_AlleregicSkinRash">Alleregic_Skin_Rash</string>
+    <string name="tag_LPVDiairrhoea">LPV_Diairrhoea</string>
+    <string name="tag_Lipodysprophy">Lipodysprophy</string>
+    <string name="tag_TBCloseContect">TB_Close_Contect</string>
+    <string name="tag_TBIndexPatient">TB_Index_Patient</string>
+    <string name="tag_TBDiabetic">TB_Diabetic</string>
+    <string name="tag_HIVStatus">HIV_Status</string>
+    <string name="tag_TBinvestigation">TB_investigation</string>
+    <string name="tag_TB_Facility_Name">TB_Facility_Name</string>
+    <string name="tag_IsMetformin">Is_Metformin</string>
+    <string name="tag_NicotineWakingFirstCigarette">Nicotine_Waking_First_Cigarette</string>
+    <string name="tag_NicotineDifficultToRefrain">Nicotine_Difficult_To_Refrain</string>
+    <string name="tag_NicotineGiveUp">Nicotine_Give_Up</string>
+    <string name="tag_NicotineHowManyCigarettes">Nicotine_How_Many_Cigarettes</string>
+    <string name="tag_NicotineMoreFrequentlyMorning">Nicotine_More_Frequently_Morning</string>
+    <string name="tag_NicotineSmokeEvenSick">Nicotine_Smoke_Even_Sick</string>
+    <string name="tag_AlcoholHowOftenDrink">Alcohol_How_Often_Drink</string>
+    <string name="tag_AlcoholHowManyUnits">Alcohol_How_Many_Units</string>
+    <string name="tag_Alcohol_How_Often_F6_M8">Alcohol_How_Often_F6_M8</string>
+    <string name="tag_TBTreatmentandStatus">TB_Treatmentand_Status</string>
+    <string name="tag_TBTreatmentHistory">TB_Treatment_History</string>
+    <string name="tag_SmearCulturePositivePTB">Smear_Culture_PositivePTB</string>
+    <string name="tag_EPTBSmearCultureNegativePTB">EPTB_SmearCulture_NegativePTB</string>
+    <string name="tag_Diarrhoea_and_dehydratrion_child_under_5_years">Diarrhoea_and_dehydratrion_child_under_5_years</string>
+    <string name="tag_Child_under_5_years_on_food_suplimentation">Child_under_5_years_on_food_suplimentation</string>
+    <string name="tag_Child_under_2_Is_the_child_breast_Fed_or_given_Suppliment">Child_under_2_Is_the_child_breast_Fed_or_given_Suppliment</string>
+
+
+    <!-- Location -->
+    <string name="create_table_location">CREATE TABLE IF NOT EXISTS Chw_Location(
+        Location_Id INTEGER primary key autoincrement, Unit_Id INTEGER,
+        Org_Id INTEGER, Latitude REAL, Longitude REAL, Time_Stamp TEXT,
+        PatientId TEXT, Created_By INTEGER, Created_Date TEXT, Offline_Record INTEGER,
+        Loc_Diabetes INTEGER, Loc_Hypertension INTEGER, Loc_Obesity INTEGER)
+    </string>
+
+    <string name="table_ChwLocation">Chw_Location</string>
+    <string name="tag_Latitude">Latitude</string>
+    <string name="tag_Longitude">Longitude</string>
+    <string name="tag_TimeStamp">Time_Stamp</string>
+    <string name="tag_LocDiabetes">Loc_Diabetes</string>
+    <string name="tag_LocHypertension">Loc_Hypertension</string>
+    <string name="tag_LocObesity">Loc_Obesity</string>
+
+    <!--Version Upgrade-->
+    <string name="tag_VersionId">Version_Id</string>
+    <string name="tag_VersionCode">Version_Code</string>
+    <string name="tag_VersionDescription">Version_Description</string>
+    <string name="tag_ForceUpgrade">Force_Upgrade</string>
+    <!--symptoms-->
+    <string name="create_table_patient_web_symptoms">CREATE TABLE IF NOT EXISTS Patient_web_Symptoms(
+        Patient_Symptom_Id INTEGER primary key autoincrement, Unit_Id INTEGER, Org_Id INTEGER,
+        PatientId TEXT, Symptom_id INTEGER, Parent_Symptom INTEGER,
+        Main_Symptom INTEGER, No_Days INTEGER, No_Month INTEGER,
+        Created_By INTEGER, Created_Date TEXT,Offline_Record INTEGER)
+    </string>
+    <string name="table_PatientwebSymptoms">Patient_web_Symptoms</string>
+    <string name="tag_PatientwebSymptomId">Patient_Symptom_Id</string>
+    <string name="tag_webSymptomid">Symptom_id</string>
+    <string name="tag_webParentSymptom">Parent_Symptom</string>
+    <string name="tag_webMainSymptom">Main_Symptom</string>
+    <string name="tag_webNoDays">No_Days</string>
+    <string name="tag_webNoMonth">No_Month</string>
+
+    <string name="create_table_symptomsname">CREATE TABLE IF NOT EXISTS Symptoms(
+Symptoms_Id INTEGER, Uniit_Id INTEGER, Org_Id INTEGER,
+Symptomps_Code TEXT, Parent_Symptoms INTEGER, Disese_Id INTEGER,
+Sub_Disease_Id INTEGER,Created_By INTEGER, Created_Date TEXT,Edited_By INTEGER,
+Edited_Date TEXT,Status INTEGER)
+</string>
+
+    <string name="table_symptomsname">Symptoms</string>
+    <string name="tag_Symptom_id">Symptoms_Id</string>
+    <string name="tag_unitid">Uniit_Id</string>
+    <string name="tag_orgid">Org_Id</string>
+    <string name="tag_sysmptomcode">Symptomps_Code</string>
+    <string name="tag_parentsymptoms">Parent_Symptoms</string>
+    <string name="tag_diseaseid">Disese_Id</string>
+    <string name="tag_subdisid">Sub_Disease_Id</string>
+
+    <string name="create_table_symptomDescription">CREATE TABLE IF NOT EXISTS Symptom_Description(
+Sympptom_Description_id INTEGER,Symptom_id INTEGER, Header_id INTEGER, Description_Code TEXT, Created_by INTEGER,Created_Date TEXT,status INTEGER)
+</string>
+
+    <string name="table_Symptom_Description">Symptom_Description</string>
+    <string name="tag_desc_Symptom_Id">Symptom_id</string>
+    <string name="tag_Sympptom_Description_id">Sympptom_Description_id</string>
+    <string name="tag_Description_Code">Description_Code</string>
+    <string name="tag_Header_id">Header_id</string>
+    <string name="tag_status">status</string>
+    <string name="tag_Created_by">Created_by</string>
+
+    <string name="create_table_Symptom_Location">CREATE TABLE IF NOT EXISTS Symptom_Location(
+Location_id INTEGER,Symptom_id INTEGER, Location_Code TEXT, Created_by INTEGER,Created_Date TEXT,status INTEGER)
+</string>
+
+    <string name="table_Symptom_Location">Symptom_Location</string>
+    <string name="tag_loc_Symptom_Id">Symptom_id</string>
+    <string name="tag_Location_id">Location_id</string>
+    <string name="tag_Location_Code">Location_Code</string>
+
+    <string name="create_table_Symptom_TW">CREATE TABLE IF NOT EXISTS Symptom_TW(
+id INTEGER,symptomId INTEGER, optionName TEXT, Created_by INTEGER,Created_Date TEXT,status INTEGER)
+</string>
+
+    <string name="table_Symptom_TW">Symptom_TW</string>
+    <string name="tag_TW_id">id</string>
+    <string name="tag_TW_symptomId">symptomId</string>
+    <string name="tag_optionName">optionName</string>
+
+    <string name="create_table_Relieved_By">CREATE TABLE IF NOT EXISTS Relieved_By(
+Relieved_By_id INTEGER,Symptom_id INTEGER, Relieved_Code TEXT, Created_By INTEGER,Created_Date TEXT,status INTEGER)
+</string>
+
+    <string name="table_Relieved_By">Relieved_By</string>
+    <string name="tag_Relieved_By_id">Relieved_By_id</string>
+    <string name="tag_RB_Symptom_id">Symptom_id</string>
+    <string name="tag_Relieved_Code">Relieved_Code</string>
+
+    <string name="create_table_Option_Headers">CREATE TABLE IF NOT EXISTS Option_Headers(
+Option_Header_id INTEGER, Option_Code TEXT, Created_by INTEGER,Created_Date TEXT,status INTEGER)
+</string>
+
+    <string name="table_Option_Headers">Option_Headers</string>
+    <string name="tag_Option_Header_id">Option_Header_id</string>
+    <string name="tag_Option_Code">Option_Code</string>
+    <!--Patient  Diagnosis-->
+    <string name="create_table_Patient_Diagnosis">CREATE TABLE IF NOT EXISTS Patient_Diagnosis(
+Patient_Diagnosis_Id INTEGER primary key autoincrement,Org_Id INTEGER,Unit_Id INTEGER,
+        PatientId TEXT, Diagnose_Treatment_Id INTEGER,Short_Name TEXT,  Created_by INTEGER,Created_Date TEXT,Edited_By INTEGER,
+Edited_Date TEXT,status INTEGER)
+</string>
+    <string name="table_Patient_Diagnosis">Patient_Diagnosis</string>
+    <string name="tag_Patient_Diagnosis_Id">Patient_Diagnosis_Id</string>
+    <string name="tag_Diagnose_Treatment_Id">Diagnose_Treatment_Id</string>
+
+    <string name="create_table_Diagnosis_Cache">CREATE TABLE IF NOT EXISTS Diagnosis_Cache(
+Diagnosis_Cache_id INTEGER,Unit_Id INTEGER,Org_Id INTEGER, CD9Code TEXT,Short_Name TEXT,Description TEXT, Created_by INTEGER,Created_Date TEXT,Edited_By INTEGER,
+Edited_Date TEXT,status INTEGER)
+</string>
+    <string name="table_Diagnosis_Cache">Diagnosis_Cache</string>
+    <string name="tag_DiagnosisCacheId">Diagnosis_Cache_id</string>
+    <string name="tag_Diagnosis">Diagnosis</string>
+    <string name="tag_Short_Name">Short_Name</string>
+    <string name="tag_Description">Description</string>
+
+
+    <string name="create_table_patientecg">CREATE TABLE IF NOT EXISTS Patient_ECG(
+        Id INTEGER primary key autoincrement,PatientId TEXT,Org_Id INTEGER,
+        Unit_Id INTEGER,Created_By INTEGER,Created_date TEXT,
+        HeartRate INTEGER,PWidth INTEGER,PR_Interval INTEGER,QRS_Duration INTEGER,
+        QTc_Interval INTEGER,QT_Interval INTEGER,
+        P_Axis INTEGER,QRS_Axis INTEGER,T_Axis INTEGER,RV5 REAL,SV1 REAL,RV5SV1 REAL,
+        DataFileName TEXT,ImageName TEXT,DiagnoseResult TEXT)
+    </string>
+
+    <string name="table_ecg">Patient_ECG</string>
+    <string name="tag_ecg_id">Id</string>
+    <string name="tag_heartrate">HeartRate</string>
+    <string name="tag_pwidth">PWidth</string>
+    <string name="tag_prInterval">PR_Interval</string>
+    <string name="tag_qrsduration">QRS_Duration</string>
+    <string name="tag_qtcInterval">QTc_Interval</string>
+    <string name="tag_qtInterval">QT_Interval</string>
+    <string name="tag_paxis">P_Axis</string>
+    <string name="tag_qrsaxis">QRS_Axis</string>
+    <string name="tag_taxis">T_Axis</string>
+    <string name="tag_rv5">RV5</string>
+    <string name="tag_sv1">SV1</string>
+    <string name="tag_rv5sv1">RV5SV1</string>
+    <string name="tag_datafilename">DataFileName</string>
+    <string name="tag_imagename">ImageName</string>
+    <string name="tag_diagonsisresult">DiagnoseResult</string>
+
+    <string name="tag_Billing_AssessmentId">AssessmentId</string>
+    <string name="tag_Total_Invoice_Amount">Total_Invoice_Amount</string>
+
+    <string name="create_table_user">CREATE TABLE IF NOT EXISTS Users(
+        Id INTEGER primary key autoincrement,Organization_Master_Id INTEGER,
+        Unit_Master_Id INTEGER,User_Id INTEGER,Display_Name TEXT,User_Type INTEGER)
+    </string>
+
+    <string name="table_user">Users</string>
+    <string name="tag_docid">Id</string>
+    <string name="tag_WebUserId">User_Id</string>
+    <string name="tag_WebDisplayName">Display_Name</string>
+    <string name="tag_WeborgMasterId">Organization_Master_Id</string>
+    <string name="tag_WebUnitMasterId">Unit_Master_Id</string>
+    <string name="tag_User_Type">User_Type</string>
+    <string name="tag_ucount">ucount</string>
+
+
+    <string name="create_table_unitmasterTable">CREATE TABLE IF NOT EXISTS Unit_Master(
+        Unit_Master_Id INTEGER primary key autoincrement,Customer_id INTEGER,Organization_Master_Id INTEGER,
+        Unit_Code TEXT,Unit_Name TEXT,Unit_Address TEXT,eMail TEXT,Contact_Person TEXT,Contact_No INTEGER,
+        Created_By INTEGER,Created_Date TEXT,Edited_By INTEGER,Edited_Date TEXT,Status INTEGER,
+        Parent_Unit INTEGER,PracticeNo INTEGER,MembershipNo INTEGER,isSmsFacility INTEGER)
+    </string>
+
+    <string name="table_unitmastertable">Unit_Master</string>
+    <string name="tag_unitmasterid">Unit_Master_Id</string>
+    <string name="tag_customerid">Customer_id</string>
+    <string name="tag_orgmasterid">Organization_Master_Id</string>
+    <string name="tag_unitcode">Unit_Code</string>
+    <string name="tag_unitname">Unit_Name</string>
+    <string name="tag_unitaddress">Unit_Address</string>
+    <string name="tag_emailsms">eMail</string>
+    <string name="tag_contactperson">Contact_Person</string>
+    <string name="tag_contactnumber">Contact_No</string>
+    <string name="tag_createdby">Created_By</string>
+    <string name="tag_createddate">Created_Date</string>
+    <string name="tag_editedby">Edited_By</string>
+    <string name="tag_editeddate">Edited_Date</string>
+    <string name="tag_parentunit">Parent_Unit</string>
+    <string name="tag_practiceno">PracticeNo</string>
+    <string name="tag_membershipno">MembershipNo</string>
+    <string name="tag_issms">isSmsFacility</string>
+
+
+    <string name="create_table_groupcardTable">CREATE TABLE IF NOT EXISTS Group_Cards(
+        Group_Id INTEGER ,Unit_Id INTEGER,Org_Id INTEGER,
+        Customer_ID INTEGER,Card_Name TEXT,Card_Type TEXT,Card_Contact_Number TEXT,
+        Card_Address TEXT,Created_By INTEGER,Created_Date TEXT,Edited_By INTEGER,Edited_Date TEXT,Status INTEGER,
+        IsLogin INTEGER,User_Id INTEGER)
+    </string>
+
+    <string name="table_groupcardstable">Group_Cards</string>
+    <string name="tag_groupid">Group_Id</string>
+    <string name="tag_customeridcode">Customer_ID</string>
+    <string name="tag_cardname">Card_Name</string>
+    <string name="tag_cardtype">Card_Type</string>
+    <string name="tag_ccno">Card_Contact_Number</string>
+    <string name="tag_cardaddr">Card_Address</string>
+    <string name="tag_islogin">IsLogin</string>
+    <string name="tag_userid">User_Id</string>
+
+
+    <string name="create_table_protocolHeader">CREATE TABLE IF NOT EXISTS Protocol_Header(
+        Protocol_Header_Id INTEGER primary key, Protocol_Code TEXT,
+        Protocol_Description TEXT,
+        Created_By INTEGER,Created_Date TEXT,Edited_By INTEGER,Edited_Date TEXT,
+        Status INTEGER,Disease_Id INTEGER,Sub_Disease_id INTEGER,System_Configure TEXT)
+    </string>
+
+
+    <string name="table_protocolHeader">Protocol_Header</string>
+    <string name="tag_protocolCode">Protocol_Code</string>
+    <string name="tag_protocolDescription">Protocol_Description</string>
+    <string name="tag_diseaseId">Disease_Id</string>
+    <string name="tag_subDiseaseId">Sub_Disease_id</string>
+    <string name="tag_SystemConfigure">System_Configure</string>
+
+
+    <string name="create_table_schedular">CREATE TABLE IF NOT EXISTS t_schedular(
+         Patient_Protocol_Details_Id INTEGER,Protocol_Code TEXT,
+        Next_Visit_date TEXT,statement TEXT,days INTEGER)
+    </string>
+
+    <string name="table_schedular">t_schedular</string>
+    <string name="next_date">Next_Visit_date</string>
+    <string name="statement">statement</string>
+    <string name="days">days</string>
+
+
+    <string name="create_table_item_master">CREATE TABLE IF NOT EXISTS Item_Master(
+         Item_Master_Id TEXT,Unit_Id TEXT,Org_Id TEXT,Item_Code TEXT,Item_Description TEXT,Unit_Price Text,
+        Created_By TEXT,Created_Date Text, Category_Type_Id TEXT, Item_Quantity TEXT ,status INTEGER)
+    </string>
+
+    <string name="table_item_master">Item_Master</string>
+    <string name="tag_item_master_id">Item_Master_Id</string>
+    <string name="tag_item_code">Item_Code</string>
+    <string name="tag_item_description">Item_Description</string>
+    <string name="tag_unit_price">Unit_Price</string>
+    <string name="tag_category_type_id">Category_Type_Id</string>
+    <string name="tag_item_quantity">Item_Quantity</string>
+
+    <string name="create_table_patient_procedure">CREATE TABLE IF NOT EXISTS Patient_Procedure(
+         Id INTEGER Primary Key AUTOINCREMENT,Unit_Id INTEGER,Org_Id INTEGER,PatientId Text,Item_Procedure_Id INTEGER,
+        Assessment_Id Integer,Created_By TEXT,Created_Date Text, Procedure_Amount Text)
+    </string>
+
+    <string name="table_patient_procedure">Patient_Procedure</string>
+    <string name="tag_item_procedure_id">Item_Procedure_Id</string>
+    <string name="tag_procedure_amount">Procedure_Amount</string>
+    <string name="tag_Proc_Amount">Proc_Amount</string>
+
+    <string name="create_table_clinical_compendium">CREATE TABLE IF NOT EXISTS Clinical_Compendium(
+         Id INTEGER Primary Key AUTOINCREMENT,Unit_Id INTEGER, Org_Id INTEGER, PatientId Text, Details Text,Created_By TEXT, Created_Date Text)
+    </string>
+
+    <string name="tag_Details">Details</string>
+    <string name="table_clinical_compendium">Clinical_Compendium</string>
+
+
+    <string name="create_table_patient_bill_Header">CREATE TABLE IF NOT EXISTS Patient_Bill_Header(
+         Patient_Bill_Header_ID INTEGER Primary Key AUTOINCREMENT,Org_Id INTEGER,
+        Unit_Id INTEGER, PatientId Text, Date_of_Consulation Text,Doctor_Id INTEGER,
+        NCD_Diagnosis Text,Sub_Total Text,Tax_Total Text,Total_Invoice_Amount Text,Description Text,Created_By Text,
+        Created_Date Text,Edited_By Text,Edited_Date Text,Status INTEGER,
+        Practice_Details Text,AssessmentId INTEGER,Patient_Visit Text)
+    </string>
+
+    <string name="patient_bill_header_id">Patient_Bill_Header_ID</string>
+    <string name="DOC">Date_of_Consulation</string>
+    <string name="doctor_id">Doctor_Id</string>
+    <string name="ncd_Diagnosis">NCD_Diagnosis</string>
+    <string name="sub_total">Sub_Total</string>
+    <string name="tax_total">Tax_Total</string>
+    <string name="Text_invoice_amount">Total_Invoice_Amount</string>
+    <string name="description">Description</string>
+    <string name="practice_details">Practice_Details</string>
+    <string name="assessmentId">AssessmentId</string>
+    <string name="patient_visit">Patient_Visit</string>
+    <string name="table_patient_billeheader">Patient_Bill_Header</string>
+
+    <string name="create_table_patient_protocol_details">CREATE TABLE IF NOT EXISTS Patient_Protocol_Details(
+        Patient_Protocol_Details_Id INTEGER primary key autoincrement, Protocol_Header_Id INTEGER,
+        Protocol_Details_Id INTEGER,Patient_Id TEXT,Date_Recorded TEXT,
+        Next_Visting_Date TEXT,Remarks TEXT,
+        Created_By INTEGER, Created_Date TEXT,Edited_By TEXT,Edited_Date TEXT,
+        status INTEGER,is_System_Protocol INTEGER,org_id INTEGER,unit_id INTEGER,other_information TEXT,selecttest TEXT )
+    </string>
+
+
+    <string name="table_PatientProtocolDetails">Patient_Protocol_Details</string>
+
+    <string name="tag_PPDetailsId">Patient_Protocol_Details_Id</string>
+    <string name="tag_Protocol_HeaderId">Protocol_Header_Id</string>
+    <string name="tag_protocol_DeatilsId">Protocol_Details_Id</string>
+    <string name="tag_Patient_Id">Patient_Id</string>
+    <string name="tag_DateRecorded">Date_Recorded</string>
+    <string name="tag_Next_VistingDate">Next_Visting_Date</string>
+    <string name="tag_Remarks">Remarks</string>
+
+    <string name="tag_statusprotocol">status</string>
+    <string name="tag_isSytemProtocol">is_System_Protocol</string>
+    <string name="tag_org_id">org_id</string>
+    <string name="tag_unit_id">unit_id</string>
+    <string name="tag_otherInformation">other_information</string>
+    <string name="tag_selecttest">selecttest</string>
+
+
+    <string name="create_table_Patient_Appointment">CREATE TABLE IF NOT EXISTS Patient_Appointment(
+        Id INTEGER primary key, Unit_Id INTEGER,
+        Org_Id INTEGER,PatientId Text,Schedule_Type Text,Next_Visting_Date Text,
+        Other_Information TEXT,Created_Date TEXT)
+    </string>
+
+    <string name="table_Patient_Appointment">Patient_Appointment</string>
+    <string name="tag_Patient_Appointment_Id">Id</string>
+    <string name="tag_Schedule_Type">Schedule_Type</string>
+    <string name="tag_Other_Information">Other_Information</string>
+
+
+    <string name="create_table_patient_sti_symptoms">CREATE TABLE IF NOT EXISTS Patient_STI_Details(
+        STI_Id INTEGER primary key autoincrement, Unit_Id INTEGER, Org_Id INTEGER,
+        PatientId TEXT, Symptom_Id INTEGER, STI_Details TEXT,
+        Patient_Treatment_Header_Id INTEGER,
+        Created_By INTEGER, Created_Date TEXT, Edited_By INTEGER, Edited_Date TEXT, Status INTEGER)
+    </string>
+    <string name="table_PatientSTIDetailsTable">Patient_STI_Details</string>
+    <string name="tag_STI_Id">STI_Id</string>
+    <string name="tag_STI_Details">STI_Details</string>
+    <string name="tag_Symptom_Id">Symptom_Id</string>
+
+    <!--Patient Mental Health Table-->
+    <string name="create_table_Patient_MentalHealth">CREATE TABLE IF NOT EXISTS Patient_MentalHealth(
+	    MentalHealth_Id INTEGER primary key autoincrement,
+	    Org_Id INTEGER,
+	    Unit_Id INTEGER,
+	    PatientId TEXT,
+	    MentalHealth_Ques1 INTEGER,
+	    MentalHealth_Ques2 INTEGER,
+        MentalHealth_Ques3 INTEGER,
+        MentalHealth_Ques4 INTEGER,
+        MentalHealth_Ques5 INTEGER,
+        MentalHealth_Ques6 INTEGER,
+        MentalHealth_Ques7 INTEGER,
+        MentalHealth_Ques8 INTEGER,
+        MentalHealth_Ques9 INTEGER,
+        MentalHealth_Ques10 INTEGER,
+        MentalHealth_Stmt TEXT,
+	    Created_By INTEGER,
+	    Created_Date TEXT,
+	    Edited_By INTEGER,
+	    Edited_Date TEXT,
+	    Status INTEGER
+	    )</string>
+
+    <string name="table_PatientMentalHealth">Patient_MentalHealth</string>
+    <string name="tag_MentalHealth_Id">MentalHealth_Id</string>
+    <string name="tag_MentalHealth_Ques1">MentalHealth_Ques1</string>
+    <string name="tag_MentalHealth_Ques2">MentalHealth_Ques2</string>
+    <string name="tag_MentalHealth_Ques3">MentalHealth_Ques3</string>
+    <string name="tag_MentalHealth_Ques4">MentalHealth_Ques4</string>
+    <string name="tag_MentalHealth_Ques5">MentalHealth_Ques5</string>
+    <string name="tag_MentalHealth_Ques6">MentalHealth_Ques6</string>
+    <string name="tag_MentalHealth_Ques7">MentalHealth_Ques7</string>
+    <string name="tag_MentalHealth_Ques8">MentalHealth_Ques8</string>
+    <string name="tag_MentalHealth_Ques9">MentalHealth_Ques9</string>
+    <string name="tag_MentalHealth_Ques10">MentalHealth_Ques10</string>
+    <string name="tag_MentalHealth_Stmt">MentalHealth_Stmt</string>
+
+    <!--Patient Mental Health Table End-->
+
+    <!--Drugs list-->
+    <string name="create_table_Drugs">CREATE TABLE IF NOT EXISTS Drugs(
+        Drug_Id INTEGER,Org_Id INTEGER,Unit_Id INTEGER, Durg_Code TEXT,Genric_name TEXT,Ethical_name TEXT,Drug_Type_Id INTEGER,
+        Group_Id INTEGER,Status INTEGER,Created_By INTEGER,Created_Date TEXT,Edited_By INTEGER,Edited_Date TEXT,
+        Total_Dosage TEXT,Drug_Mode TEXT)
+</string>
+    <string name="table_Drugs">Drugs</string>
+    <string name="tag_Total_Dosage">Total_Dosage</string>
+
+    <!--PatientPersonalMedicalHistoryTable-->
+    <string name="create_table_patient_personal_medical_history">CREATE TABLE IF NOT EXISTS Patient_Personal_Medical_History(
+        Id INTEGER primary key autoincrement, Unit_Id TEXT, Org_Id TEXT,
+        Personal_Med_His_Id TEXT,PatientId TEXT,Created_By INTEGER, Created_Date TEXT,Edited_By,Edited_Date,Status,Other_Per_Med_His)
+    </string>
+    <string name="table_patient_personal_medical_history">Patient_Personal_Medical_History</string>
+    <string name="tag_Personal_Med_His_Id">Personal_Med_His_Id</string>
+    <string name="tag_Other_Per_Med_His">Other_Per_Med_His</string>
+
+    <!--ChatDetailsTable-->
+    <string name="create_table_chat_details">CREATE TABLE IF NOT EXISTS Chat_Details(
+        Id INTEGER primary key autoincrement,Org_Id TEXT, Unit_Id TEXT,Group_Id TEXT,
+        is_Doctor TEXT,PatientId TEXT,Doctor_Id TEXT,Message TEXT,isMessageViewed TEXT,
+        Created_By TEXT,Created_Date TEXT,AddedName TEXT)
+    </string>
+    <string name="table_chat_details">Chat_Details</string>
+    <string name="tag_is_Doctor">is_Doctor</string>
+    <string name="tag_Message">Message</string>
+    <string name="tag_is_Message_Viewed">isMessageViewed</string>
+
+    <!--DiabeticFootAssessmentTable-->
+    <string name="create_table_diabetic_foot_assessment">CREATE TABLE IF NOT EXISTS Diabetic_Foot_Assessment(
+        Diabetic_Foot_Assessment_Id INTEGER primary key autoincrement,Org_Id TEXT, Unit_Id TEXT,Left_Foot_Skin TEXT,
+        Right_Foot_Skin TEXT, Left_Foot_Nails TEXT,Right_Foot_Nails TEXT,Left_Foot_Deformity TEXT,
+        Right_Foot_Deformity TEXT, Left_Foot_Footware TEXT,Right_Foot_Footware TEXT,Left_Foot_Temperature_Cold TEXT,
+        Right_Foot_Temperature_Cold TEXT, Left_Foot_Temperature_Warm TEXT,Right_Foot_Temperature_Warm TEXT,Left_Foot_Range_Big_toe_Motion TEXT,
+        Right_Foot_Range_Big_toe_Motion TEXT, Left_Foot_Sensation_Monofilament TEXT,Right_Foot_Sensation_Monofilament TEXT,Left_Foot_Enquiry TEXT,
+        Right_Foot_Enquiry TEXT, Left_Foot_Pedal_Pause TEXT,Right_Foot_Pedal_Pause TEXT,Left_Foot_Dependent_Rubor TEXT,
+        Right_Foot_Dependent_Rubor TEXT,Left_Foot_Erythema TEXT,Right_Foot_Erythema TEXT,Foot_Assessment_Report TEXT,
+        Id TEXT, Created_By TEXT,Created_Date TEXT,Edited_By TEXT,Edited_Date TEXT, status TEXT,LeftFootSensation1 TEXT,LeftFootSensation2 TEXT,
+        LeftFootSensation3 TEXT,LeftFootSensation4 TEXT,LeftFootSensation5 TEXT,LeftFootSensation6 TEXT,LeftFootSensation7 TEXT, LeftFootSensation8 TEXT,
+        LeftFootSensation9 TEXT,rightFootSensation1 TEXT,rightFootSensation2 TEXT,rightFootSensation3 TEXT,rightFootSensation4 TEXT,rightFootSensation5 TEXT,
+        rightFootSensation6 TEXT,rightFootSensation7 TEXT,rightFootSensation8 TEXT,rightFootSensation9 TEXT)
+    </string>
+
+    <string name="table_diabetic_foot_assessment">Diabetic_Foot_Assessment</string>
+    <string name="tag_df_Assessment_Id">Diabetic_Foot_Assessment_Id</string>
+    <string name="tag_lf_Skin">Left_Foot_Skin</string>
+    <string name="tag_rf_Skin">Right_Foot_Skin</string>
+    <string name="tag_lf_Nails">Left_Foot_Nails</string>
+    <string name="tag_rf_Nails">Right_Foot_Nails</string>
+    <string name="tag_lf_Deformity">Left_Foot_Deformity</string>
+    <string name="tag_rf_Deformity">Right_Foot_Deformity</string>
+    <string name="tag_lf_Footware">Left_Foot_Footware</string>
+    <string name="tag_rf_Footware">Right_Foot_Footware</string>
+    <string name="tag_lf_Temperature_Cold">Left_Foot_Temperature_Cold</string>
+    <string name="tag_rf_Temperature_Cold">Right_Foot_Temperature_Cold</string>
+    <string name="tag_lf_Temperature_Warm">Left_Foot_Temperature_Warm</string>
+    <string name="tag_rf_Temperature_Warm">Right_Foot_Temperature_Warm</string>
+    <string name="tag_lf_Range_Big_toe_Motion">Left_Foot_Range_Big_toe_Motion</string>
+    <string name="tag_rf_Range_Big_toe_Motion">Right_Foot_Range_Big_toe_Motion</string>
+    <string name="tag_lf_Sensation_Monofilament">Left_Foot_Sensation_Monofilament</string>
+    <string name="tag_rf_Sensation_Monofilament">Right_Foot_Sensation_Monofilament</string>
+    <string name="tag_lf_Enquiry">Left_Foot_Enquiry</string>
+    <string name="tag_rf_Enquiry">Right_Foot_Enquiry</string>
+    <string name="tag_lf_Pedal_Pause">Left_Foot_Pedal_Pause</string>
+    <string name="tag_rf_Pedal_Pause">Right_Foot_Pedal_Pause</string>
+    <string name="tag_lf_Dependent_Rubor">Left_Foot_Dependent_Rubor</string>
+    <string name="tag_rf_Dependent_Rubor">Right_Foot_Dependent_Rubor</string>
+    <string name="tag_lf_Erythema">Left_Foot_Erythema</string>
+    <string name="tag_rf_Erythema">Right_Foot_Erythema</string>
+    <string name="tag_Foot_Assessment_Report">Foot_Assessment_Report</string>
+
+    <string name="tag_LeftFootSensation1">LeftFootSensation1</string>
+    <string name="tag_LeftFootSensation2">LeftFootSensation2</string>
+    <string name="tag_LeftFootSensation3">LeftFootSensation3</string>
+    <string name="tag_LeftFootSensation4">LeftFootSensation4</string>
+    <string name="tag_LeftFootSensation5">LeftFootSensation5</string>
+    <string name="tag_LeftFootSensation6">LeftFootSensation6</string>
+    <string name="tag_LeftFootSensation7">LeftFootSensation7</string>
+    <string name="tag_LeftFootSensation8">LeftFootSensation8</string>
+    <string name="tag_LeftFootSensation9">LeftFootSensation9</string>
+
+    <string name="tag_rightFootSensation1">rightFootSensation1</string>
+    <string name="tag_rightFootSensation2">rightFootSensation2</string>
+    <string name="tag_rightFootSensation3">rightFootSensation3</string>
+    <string name="tag_rightFootSensation4">rightFootSensation4</string>
+    <string name="tag_rightFootSensation5">rightFootSensation5</string>
+    <string name="tag_rightFootSensation6">rightFootSensation6</string>
+    <string name="tag_rightFootSensation7">rightFootSensation7</string>
+    <string name="tag_rightFootSensation8">rightFootSensation8</string>
+    <string name="tag_rightFootSensation9">rightFootSensation9</string>
+    <!--DiabeticFootAssessmentTable Ends-->
+
+
+    <!--Treatment History Table-->
+    <string name="create_table_treatment_history">CREATE TABLE IF NOT EXISTS Treatment_History(
+        Treatment_History_Id INTEGER primary key autoincrement,Org_Id TEXT, Unit_Id TEXT,Treatment_History TEXT,
+        Hypertension_Education TEXT,Response_Treatment TEXT,Id TEXT,Created_By TEXT,Created_Date TEXT,
+        Edited_By TEXT,Edited_Date TEXT,status TEXT)
+    </string>
+
+    <string name="table_treatment_history">Treatment_History</string>
+    <string name="tag_treatment_history">Treatment_History</string>
+    <string name="tag_hypertension_education">Hypertension_Education</string>
+    <string name="tag_response_treatment">Response_Treatment</string>
+    <!--Treatment History Ends-->
+
+    <!--Systemic History Table -->
+    <string name="create_table_systemic_history">CREATE TABLE IF NOT EXISTS Systemic_History(
+        Systemic_History_Id INTEGER primary key autoincrement,Org_Id TEXT, Unit_Id TEXT,Cardiovascular TEXT,
+        Other_Symptoms TEXT,Peripheral_Lower_Extermities TEXT,Id TEXT,Created_By TEXT,Created_Date TEXT,
+        Edited_By TEXT,Edited_Date TEXT,status TEXT)
+    </string>
+
+    <string name="table_Systemic_History">Systemic_History</string>
+    <string name="tag_Cardiovascular">Cardiovascular</string>
+    <string name="tag_Other_Symptoms">Other_Symptoms</string>
+    <string name="tag_Peripheral_Lower_Extermities">Peripheral_Lower_Extermities</string>
+    <!--Systemic History Ends-->
+
+    <!--GenaralHypertensionHistory Table -->
+    <string name="create_table_genaral_hypertension_history">CREATE TABLE IF NOT EXISTS Genaral_Hypertension_History(
+        Genaral_Hypertension_History_Id INTEGER primary key autoincrement,Org_Id TEXT, Unit_Id TEXT,Non_Hypertensive_Treatment TEXT,
+        Renal_Problem TEXT,Renal_Artery_Stenosis TEXT,Primary_Aldesteronism TEXT,Cushings_Syndrome TEXT,Pheochromocytoma TEXT,Id TEXT,
+        Created_By TEXT,Created_Date TEXT,Edited_By TEXT,Edited_Date TEXT,status TEXT)
+    </string>
+
+    <string name="table_Genaral_Hypertension_History">Genaral_Hypertension_History</string>
+    <string name="tag_Non_Hypertensive_Treatment">Non_Hypertensive_Treatment</string>
+    <string name="tag_Renal_Problem">Renal_Problem</string>
+    <string name="tag_Renal_Artery_Stenosis">Renal_Artery_Stenosis</string>
+    <string name="tag_Primary_Aldesteronism">Primary_Aldesteronism</string>
+    <string name="tag_Cushings_Syndrome">Cushings_Syndrome</string>
+    <string name="tag_Pheochromocytoma">Pheochromocytoma</string>
+    <!--GenaralHypertensionHistoryTable Ends-->
+
+
+    <!--Dietary_History Table -->
+    <string name="create_table_dietary_history">CREATE TABLE IF NOT EXISTS Dietary_History(
+        Dietary_History_Id INTEGER primary key autoincrement,Org_Id TEXT, Unit_Id TEXT,Diet_Composition TEXT,
+        Salt_Intake TEXT,Id TEXT,Created_By TEXT,Created_Date TEXT,
+        Edited_By TEXT,Edited_Date TEXT,status TEXT)
+    </string>
+
+    <string name="table_Dietary_History">Dietary_History</string>
+    <string name="tag_Diet_Composition">Diet_Composition</string>
+    <string name="tag_Salt_Intake">Salt_Intake</string>
+    <!--Dietary_History Ends-->
+
+
+    <!--Family History Table -->
+    <string name="create_table_family_history">CREATE TABLE IF NOT EXISTS Family_History(
+        Family_History_Id INTEGER primary key autoincrement,Org_Id TEXT, Unit_Id TEXT,First_Degree_Family_History_Cardiovasular_Accident TEXT,
+        First_Degree_Family_History_Dyslipidemia TEXT,Physical_Activities_Status TEXT,Id TEXT,Created_By TEXT,Created_Date TEXT,
+        Edited_By TEXT,Edited_Date TEXT,status TEXT)
+    </string>
+
+    <string name="table_Family_History">Family_History</string>
+    <string name="tag_FH_Cardiovasular_Accident">First_Degree_Family_History_Cardiovasular_Accident</string>
+    <string name="tag_FH_Dyslipidemia">First_Degree_Family_History_Dyslipidemia</string>
+    <string name="tag_Physical_Activities_Status">Physical_Activities_Status</string>
+    <!--Family History Ends-->
+
+    <!--Diabetic_Foot_Assessment_Images Table -->
+    <string name="create_table_df_Assessment_Images">CREATE TABLE IF NOT EXISTS Diabetic_Foot_Assessment_Images(
+        Diabetic_Foot_Assessment_Image_Id INTEGER primary key autoincrement,Org_Id TEXT, Unit_Id TEXT,Image_Data TEXT,
+        Id TEXT,Created_By TEXT,Created_Date TEXT,
+        Edited_By TEXT,Edited_Date TEXT,status TEXT)
+    </string>
+
+    <string name="table_Df_Assessment_Images">Diabetic_Foot_Assessment_Images</string>
+    <string name="tag_Image_Data">Image_Data</string>
+    <!--Diabetic_Foot_Assessment_Images Ends-->
+
+    <!--Nurse_Response_to_Doc_Request Table -->
+    <string name="create_table_Nurse_Response_to_Doc_Request">CREATE TABLE IF NOT EXISTS Nurse_Response_to_Doc_Request(
+        Nurse_Response_to_Doc_RequestId INTEGER primary key autoincrement,Id TEXT,Org_Id TEXT, Unit_Id TEXT,Patient_Id TEXT,
+        Completed_Task TEXT,Request_Report TEXT,Assessment_Id TEXT,Patient_Queue_Id TEXT,Created_By TEXT,Created_Date TEXT,
+        Edited_By TEXT,Edited_Date TEXT,status TEXT)
+    </string>
+
+    <string name="table_Nurse_Response_to_Doc_Request">Nurse_Response_to_Doc_Request</string>
+    <string name="tag_Completed_Task">Completed_Task</string>
+    <string name="tag_Request_Report">Request_Report</string>
+    <string name="tag_Patient_Queue_Id">Patient_Queue_Id</string>
+    <string name="default_web_client_id">AIzaSyBX5xvfQJgI9j9ZI7AWmBbq-7EKuq5i7QE</string>
+    <!--Nurse_Response_to_Doc_Request Ends-->
+
+
+</resources>
